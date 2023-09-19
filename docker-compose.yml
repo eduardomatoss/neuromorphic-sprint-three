@@ -1,0 +1,40 @@
+version: "3.4"
+services:
+  neuromorphic-sprint-three:
+    tty: true
+    image: "eduardomatoss/neuromorphic-sprint-three"
+    stdin_open: true
+    build:
+      context: .
+      target: "development"
+    volumes:
+      - ".:/app"
+    environment:
+      - ENV_FOR_DYNACONF=development
+      - DATABASE_URL=postgres-db
+      - DATABASE_NAME=project_starter
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_PORT=5432
+    ports:
+      - "8000:8000"
+    networks:
+      - db_nw
+
+  postgres-db:
+    image: postgres:16
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=project_starter
+    networks:
+      - db_nw
+
+networks:
+  db_nw:
+    driver: bridge
+
+volumes:
+  postgres-db:
