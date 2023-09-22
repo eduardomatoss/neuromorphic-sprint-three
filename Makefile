@@ -45,6 +45,9 @@ docker/build: generate-default-env-file
 docker/up:
 	CURRENT_UID=${DOCKER_USER} docker-compose up -d
 
+docker/postgres/up:
+	CURRENT_UID=${DOCKER_USER} docker-compose up -d postgres-db
+
 docker/down:
 	CURRENT_UID=${DOCKER_USER} docker-compose down --remove-orphans
 

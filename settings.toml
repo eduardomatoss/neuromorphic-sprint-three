@@ -8,6 +8,8 @@ default_access_log="True"
 request_ssl_verify="True"
 request_default_user_agent="neuromorphic-sprint-three"
 
+thingspeak_api_url="https://api.thingspeak.com"
+
 [test]
 
 [qa]

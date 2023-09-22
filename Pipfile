@@ -12,6 +12,8 @@ dynaconf = "==3.2.3"
 starlette-exporter = "==0.16.0"
 fastapi-sqlalchemy = "==0.2.1"
 psycopg2-binary = "==2.9.7"
+requests = "==2.31.0"
+dataclasses-json = "==0.6.0"
 
 [dev-packages]
 flake8 = "==6.1.0"
