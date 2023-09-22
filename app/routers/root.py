@@ -7,4 +7,4 @@ router = APIRouter()
 
 @router.get("/")
 def root():
-    return RedirectResponse(url="/docs")
+    return RedirectResponse(url="/v1/docs")
